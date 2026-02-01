@@ -1,0 +1,19 @@
+<div class="generator-container">
+  <div class="generator-label">Enter text to transform</div>
+
+  <textarea
+    class="generator-textarea"
+    [formControl]="inputControl"
+    (keydown.enter)="onEnter($event)"
+    placeholder="Type your text here"
+  ></textarea>
+
+  <button class="generator-button" (click)="onSubmit($event)">Transform</button>
+
+  <div *ngIf="output" class="generator-output">
+    {{ output }}
+    <button class="generator-button copy-button" (click)="copyToClipboard()">
+      Copy
+    </button>
+  </div>
+</div>
