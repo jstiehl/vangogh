@@ -24,7 +24,7 @@
       },
       "configurations": {
         "production": {
-          "baseHref": "/vangogh/",
+          "baseHref": "/",
           "budgets": [
             {
               "type": "initial",
