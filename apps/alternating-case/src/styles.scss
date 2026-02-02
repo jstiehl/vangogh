@@ -1,3 +1,11 @@
+/* global CSS variables used by components */
+:root {
+  --header-bg: rgba(2, 6, 23, 0.98);
+  --header-fg: #ffffff;
+  --header-border: rgba(255, 255, 255, 0.04);
+  --container-max: 1100px;
+}
+
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: #f0f2f5;

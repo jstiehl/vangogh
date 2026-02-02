@@ -6,9 +6,17 @@
       matInput
       [formControl]="inputControl"
       (keydown.enter)="onEnter($event)"
+      (paste)="onPaste($event)"
       placeholder="Type your text here"
-      rows="5"
+      [rows]="rowsCount"
+      [attr.maxlength]="MAX_CHARS"
+      class="no-resize"
     ></textarea>
+    <mat-hint align="end">
+      <span [class.count-warning]="(inputControl.value || '').length >= 990">
+        {{ (inputControl.value || '').length }} / {{ MAX_CHARS }}
+      </span>
+    </mat-hint>
   </mat-form-field>
 
   <button
@@ -28,6 +36,7 @@
       color="primary"
       (click)="copyToClipboard()"
       matTooltip="{{ copied ? 'Copied!' : 'Copy to clipboard' }}"
+      [matTooltipClass]="'copy-tooltip'"
     >
       <mat-icon>content_copy</mat-icon>
     </button>
