@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import alternatingCase from '@jstiehl/alternating-case';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +9,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  header = alternatingCase('Alternating Case', { start: 'lower' });
+}
