@@ -1,75 +1,119 @@
-/* Center box like a simple generator tool */
+/* ====================================
+   Container for the whole generator
+==================================== */
 .generator-container {
-  max-width: 480px;
+  max-width: 600px;
   margin: 2rem auto;
-  text-align: center;
-  font-family: sans-serif;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
   border-radius: 8px;
-  background: #fafafa;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Label above textarea */
 .generator-label {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
   color: #333;
 }
 
-.generator-textarea {
+/* ====================================
+   Textarea styling
+==================================== */
+.generator-textarea-field {
   width: 100%;
-  min-height: 100px;
-  font-size: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  resize: vertical;
-  margin-bottom: 1rem;
+
+  /* The container of the input/textarea */
+  .mat-form-field-flex {
+    border: 1px solid #c0c0c0; /* visible border */
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Hide default underline */
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  /* The textarea itself */
+  textarea.mat-input-element {
+    padding: 0.5rem;
+    font-size: 1rem;
+    min-height: 120px;
+    line-height: 1.4;
+    resize: vertical; /* allows vertical resizing */
+  }
 }
 
-.generator-button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  background: #007bff;
+/* ====================================
+   Transform button styling
+==================================== */
+button.transform-button {
+  background-color: #1976d2; /* vivid blue */
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  text-transform: none;
+  box-shadow: none;
+
+  &:hover {
+    background-color: #115293;
+  }
 }
 
-.generator-button:hover {
-  background: #0056b3;
-}
-
+/* ====================================
+   Output box styling
+==================================== */
 .generator-output {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #f9fafb;
   word-break: break-word;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-  color: #222;
+
+  /* Output text */
+  .output-text {
+    flex: 1;
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #212121;
+  }
+
+  /* Copy icon button */
+  button.mat-icon-button {
+    color: #1976d2;
+    font-size: 1.3rem;
+
+    &:hover {
+      background: rgba(25, 118, 210, 0.1);
+    }
+  }
 }
 
-.generator-output {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  word-break: break-word;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-  color: #222;
-  position: relative;
-}
+/* ====================================
+   Responsive adjustments
+==================================== */
+@media (max-width: 480px) {
+  .generator-container {
+    padding: 1rem 0.5rem;
+  }
 
-.copy-button {
-  font-size: 0.9rem;
-  padding: 0.3rem 0.6rem;
-  margin-left: 0.5rem;
+  .generator-output {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .output-text {
+      margin-right: 0;
+      margin-bottom: 0.75rem;
+    }
+  }
 }
