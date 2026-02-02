@@ -1,17 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { alternatingCase } from '@jstiehl/alternating-case';
 
 @Component({
   selector: 'app-alternating-case',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+  ],
   templateUrl: './alternating-case.component.html',
   styleUrl: './alternating-case.component.scss',
 })
 export class AlternatingCaseComponent {
   inputControl = new FormControl('');
   output = '';
+  copied = false;
 
   onEnter(event: Event) {
     // Allow Shift+Enter for new lines

@@ -1,19 +1,35 @@
 <div class="generator-container">
   <div class="generator-label">Enter text to transform</div>
 
-  <textarea
-    class="generator-textarea"
-    [formControl]="inputControl"
-    (keydown.enter)="onEnter($event)"
-    placeholder="Type your text here"
-  ></textarea>
+  <mat-form-field appearance="fill" class="generator-textarea-field">
+    <textarea
+      matInput
+      [formControl]="inputControl"
+      (keydown.enter)="onEnter($event)"
+      placeholder="Type your text here"
+      rows="5"
+    ></textarea>
+  </mat-form-field>
 
-  <button class="generator-button" (click)="onSubmit($event)">Transform</button>
+  <button
+    mat-raised-button
+    color="primary"
+    class="transform-button"
+    (click)="onSubmit($event)"
+  >
+    Transform
+  </button>
 
   <div *ngIf="output" class="generator-output">
-    {{ output }}
-    <button class="generator-button copy-button" (click)="copyToClipboard()">
-      Copy
+    <span class="output-text">{{ output }}</span>
+
+    <button
+      mat-icon-button
+      color="primary"
+      (click)="copyToClipboard()"
+      matTooltip="{{ copied ? 'Copied!' : 'Copy to clipboard' }}"
+    >
+      <mat-icon>content_copy</mat-icon>
     </button>
   </div>
 </div>
