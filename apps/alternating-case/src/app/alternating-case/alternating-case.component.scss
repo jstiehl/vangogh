@@ -50,6 +50,16 @@
   }
 }
 
+/* prevent user from resizing the textarea */
+textarea.no-resize {
+  resize: none !important;
+}
+
+/* ensure textarea takes full width inside our custom field */
+.generator-textarea-field textarea.mat-input-element {
+  width: 100%;
+}
+
 /* ====================================
    Transform button styling
 ==================================== */
@@ -97,6 +107,27 @@ button.transform-button {
       background: rgba(25, 118, 210, 0.1);
     }
   }
+}
+
+/* copy icon interactive styles moved to global styles.scss to ensure Material overlay and specificity work correctly */
+
+/* character count warning */
+.count-warning {
+  color: #d32f2f; /* Material red 700 */
+  font-weight: 600;
+}
+
+/* Ensure mat-error is visible inside our custom field styling */
+.mat-form-field .mat-error {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* style mat-hint so it sits nicely with our custom .mat-form-field-flex */
+.mat-form-field .mat-hint {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.875rem;
 }
 
 /* ====================================

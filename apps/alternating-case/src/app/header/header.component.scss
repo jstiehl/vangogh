@@ -1,0 +1,83 @@
+.site-header {
+  width: 100%;
+  background: linear-gradient(180deg, var(--header-bg), rgba(2, 6, 23, 0.95));
+  color: var(--header-fg);
+  box-shadow:
+    0 1px 0 var(--header-border) inset,
+    0 2px 8px rgba(2, 6, 23, 0.55);
+  backdrop-filter: saturate(120%) blur(6px);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.site-header .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem; /* tighten spacing a bit */
+  color: var(--header-fg);
+  text-decoration: none;
+}
+
+.brand .brand-icon {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+  opacity: 0.95;
+  transform: translateY(1px);
+}
+
+.title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: 1.5rem; /* slightly larger to match logo */
+  line-height: 1;
+  letter-spacing: 0.2px;
+  margin-left: 0.25rem;
+  color: var(--header-fg);
+  text-transform: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--header-fg);
+  text-decoration: none;
+  opacity: 0.9;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+
+.github-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.github-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 1;
+}
+
+/* make header sticky on top */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
