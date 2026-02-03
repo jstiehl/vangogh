@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import alternatingCase from '@jstiehl/alternating-case';
+import { AltCasePipe } from '@vangogh/shared-pipes';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, AltCasePipe],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  header = alternatingCase('Alternating Case', { start: 'lower' });
+  header = 'Alternating Case';
 }
